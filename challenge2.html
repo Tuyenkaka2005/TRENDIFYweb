@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hiphop dance challenge</title>
+    <link rel="stylesheet" href="styleschange1.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Hiphop dance challenge</h1>
+      <div class="challenge-video">
+        <video controls>
+          <source src="./video/hiphop.mp4" type="video/mp4" />
+          Your browser does not support video.
+        </video>
+      </div>
+
+      <div class="challenge-description">
+        <h2>Challenge Description</h2>
+        <p>
+          Join the dance challenge and show off your skills! Record your video
+          and share it with your friends.
+        </p>
+      </div>
+
+      <div class="upload-section">
+        <h2>Upload your video</h2>
+        <input type="file" id="user-video" accept="video/*" />
+        <button id="uploadButton">Upload</button>
+      </div>
+
+      <div class="back-button">
+        <button onclick="goBack()">Back</button>
+      </div>
+    </div>
+
+    <script>
+      function goBack() {
+        window.history.back();
+      }
+
+      document
+        .getElementById("uploadButton")
+        .addEventListener("click", function () {
+          const videoInput = document.getElementById("user-video");
+          if (videoInput.files.length > 0) {
+            alert("Your video has been uploaded successfully.!");
+          } else {
+            alert("Please select a video to upload !");
+          }
+        });
+    </script>
+  </body>
+</html>
